@@ -1,18 +1,34 @@
-# Vue 3 + TypeScript + Vite
+# user_search_page_code_challenge
+This is a User search Page.
+This page will allow the users to lookup other users in the company, list 
+all the matching results and, when one selected, display that user 
+profile and detailed information. 
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+In order to get the user information, the [randomuser.me](https://randomuser.me/) API will be used. 
+This Api will generate random user data on each request.
 
-## Recommended IDE Setup
+## App behavior
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+1. By the time the page loads we want to populate the results list with 25 user entries with an infinite scrolling on the search list.
+2. On top of the search list, a free text input that will filter the current results by the user First name or Last name field and their gender (the Api only handles 
+“male” and “female” as possible genders).
+3. On the results list each user entry display their name, email information and a thumbnail picture of them. The name and last name must have their first letter capitalized. 
+4. When clicking one of the user entries the detailed information are displayed on the screen.
 
-## Type Support For `.vue` Imports in TS
+## Project setup
+```
+yarn install
+```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+### Compiles and hot-reloads for development
+```
+yarn dev
+```
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### Compiles and minifies for production
+```
+yarn build
+```
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
